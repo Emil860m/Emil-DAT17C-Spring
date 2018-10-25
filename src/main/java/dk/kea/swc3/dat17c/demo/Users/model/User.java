@@ -1,4 +1,4 @@
-package dk.kea.swc3.dat17c.demo.model;
+package dk.kea.swc3.dat17c.demo.Users.model;
 
 public class User {
     private String name;

@@ -1,6 +1,6 @@
-package dk.kea.swc3.dat17c.demo.model.controller;
+package dk.kea.swc3.dat17c.demo.Users.controller;
 
-import dk.kea.swc3.dat17c.demo.model.User;
+import dk.kea.swc3.dat17c.demo.Users.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
