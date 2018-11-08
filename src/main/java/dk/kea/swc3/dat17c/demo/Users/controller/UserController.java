@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class UserController {
 
-    @GetMapping("/")
+    @GetMapping("/User")
     //@ResponseBody
     public ModelAndView index(@RequestParam(defaultValue = "{{user}}") String name,
                               @RequestParam(defaultValue = "-1") Integer age,
@@ -17,7 +17,7 @@ public class UserController {
     {
         Character gender1 = gender.charAt(0);
         User u = new User(name, age, gender1);
-        ModelAndView mv = new ModelAndView("index");
+        ModelAndView mv = new ModelAndView("User");
         mv.getModel().put("user", u);
         return mv;
     }
