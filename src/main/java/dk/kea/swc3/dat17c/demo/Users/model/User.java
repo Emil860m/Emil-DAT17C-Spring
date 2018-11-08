@@ -1,9 +1,21 @@
 package dk.kea.swc3.dat17c.demo.Users.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long Id;
     private String name;
     private Integer age;
     private Character gender;
+
+    public User() {
+    }
 
     public User(String name) {
         this.name = name;
@@ -19,7 +31,7 @@ public class User {
         name = name.toLowerCase();
         this.name = name.substring(0,1).toUpperCase() + name.substring(1);
         this.age = age;
-        this.gender = gender.toString().toUpperCase().charAt(0);
+        this.gender = gender;//gender.toString().toUpperCase().charAt(0);
     }
 
     public Character getGender() {

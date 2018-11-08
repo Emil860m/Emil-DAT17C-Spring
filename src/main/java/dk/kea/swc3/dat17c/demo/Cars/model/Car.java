@@ -1,9 +1,8 @@
 package dk.kea.swc3.dat17c.demo.Cars.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import dk.kea.swc3.dat17c.demo.Users.model.User;
+
+import javax.persistence.*;
 
 @Entity
 public class Car {
@@ -13,6 +12,15 @@ public class Car {
     private String model;
     private String color;
     private Integer doors;
+    @OneToOne
+    private User user;
+
+    public Car(String model, String color, Integer doors, User user) {
+        this.model = model;
+        this.color = color;
+        this.doors = doors;
+        this.user = user;
+    }
 
     public Car(String model, String color, Integer doors) {
         this.model = model;
@@ -22,6 +30,9 @@ public class Car {
 
     public Car(String model) {
         this.model = model.toLowerCase();
+    }
+
+    public Car() {
     }
 
     public Long getId() {
